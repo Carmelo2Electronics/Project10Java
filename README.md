@@ -1,1 +1,1 @@
-# Project10Java
+# Java project code
