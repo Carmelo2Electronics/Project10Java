@@ -136,10 +136,10 @@ class Panel extends JPanel implements ActionListener{
 		if(e.getSource()==Button[0]) {			
 			executeEvent(0);			
 		}		
-		else if(e.getSource()==Button[1]) {
+		if(e.getSource()==Button[1]) {
 			executeEvent(1);			
 		}
-		else if(e.getSource()==Button[2]) {
+		if(e.getSource()==Button[2]) {
 			executeEvent(2);			
 		}
 	}
