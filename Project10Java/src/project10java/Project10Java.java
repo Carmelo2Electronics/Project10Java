@@ -117,19 +117,20 @@ class Panel extends JPanel implements ActionListener{
 	private static final long serialVersionUID = 1L;
 	
 	private JButton Button[]= {new JButton("Led_0_OFF"),new JButton("Led_1_OFF"),new JButton("Led_2_OFF")};	
-	private boolean flags[]= {false, false,false};	
+	private boolean flags[]= {true, true, true};	
 	private SendString  sendString ;
 	private JLabel label;
 	
-	public Panel(SerialPort puerto) {	
+	public Panel(SerialPort port) {	
 		for(int i=0;i<3;i++) {
+			Button[i].setBackground(Color.RED);
 			add(Button[i]);
 			Button[i].addActionListener(this);
 		}
 		label=new JLabel("--START--");
 		add(label);
-		sendString =new SendString (puerto);		
-		new ReceiveString(puerto,label);
+		sendString =new SendString (port);		
+		new ReceiveString(port,label);
 	}
 
 	public void actionPerformed(ActionEvent e) {		
